@@ -1,10 +1,29 @@
 package com.senac.projetointegrador.VariedadesGeek.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "filme")
+
 public class Filme {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column
     private String nome;
+
+    @Column
     private String genero;
+
+    @Column
     private Integer faixaEtaria;
+
+    @Column
     private String caracteristica;
+
+    @Column
     private String sinopse;
 
     public Filme(String nome, String genero, Integer faixaEtaria, String caracteristica, String sinopse) {
@@ -13,6 +32,14 @@ public class Filme {
         this.faixaEtaria = faixaEtaria;
         this.caracteristica = caracteristica;
         this.sinopse = sinopse;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {

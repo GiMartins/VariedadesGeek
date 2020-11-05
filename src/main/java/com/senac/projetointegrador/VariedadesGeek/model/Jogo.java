@@ -1,11 +1,33 @@
 package com.senac.projetointegrador.VariedadesGeek.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "jogo")
+
 public class Jogo {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column
     private String genero;
+
+    @Column
     private Integer faixaEtaria;
+
+    @Column
     private String sinopse;
+
+    @Column
     private String modos;
+
+    @Column
     private String caracteristicas;
+
+    @Column
     private String plataforma;
 
     public Jogo(String genero, Integer faixaEtaria, String sinopse, String modos, String caracteristicas, String plataforma) {
@@ -15,6 +37,14 @@ public class Jogo {
         this.modos = modos;
         this.caracteristicas = caracteristicas;
         this.plataforma = plataforma;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setGenero(String genero) {

@@ -1,12 +1,30 @@
 package com.senac.projetointegrador.VariedadesGeek.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "comentario")
+
 public class Comentario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne
     private Usuario usuario;
+
+    @Column
     private Date data;
+
+    @Column
     private Integer quantidadeLike;
+
+    @Column
     private Integer quantidadeDeslike;
+
+    @Column
     private Boolean habilitado;
 
     public Comentario(Usuario usuario, Date data, Integer quantidadeLike, Integer quantidadeDeslike, Boolean habilitado) {
