@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <form th:object="${usuario}" th:action="@{/salvarUsuario}" method="post">
+        <input type="text" th:field="*{nomeCompleto}" placeholder="Nome Completo"/>
+        <input type="text" th:field="*{email}" placeholder="Email"/>
+        <input type="text" th:field="*{senha}" placeholder="Senha"/>
+        <input type="text" th:field="*{nomeUsuario}" placeholder="Nome de Usuário"/>
+        <input type="text" th:field="*{idade}" placeholder="Idade"/>
+        <input type="text" th:field="*{sexo}" placeholder="Sexo"/>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

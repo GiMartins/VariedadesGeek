@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Série</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <form th:object="${serie}" th:action="@{/salvarSerie}" method="post">
+        <input type="text" th:field="*{genero}" placeholder="Gênero"/>
+        <input type="text" th:field="*{faixaEtaria}" placeholder="Faixa Etária"/>
+        <input type="text" th:field="*{caracteristica}" placeholder="Características"/>
+        <input type="text" th:field="*{sinopse}" placeholder="Sinopse"/>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+</body>
+</html>

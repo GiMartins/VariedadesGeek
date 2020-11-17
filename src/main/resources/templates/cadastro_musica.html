@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Música</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <form th:object="${musica}" th:action="@{/salvarMusica}" method="post">
+        <input type="text" th:field="*{nomeMusica}" placeholder="Nome da Música"/>
+        <input type="text" th:field="*{genero}" placeholder="Gênero"/>
+        <input type="text" th:field="*{artista}" placeholder="Artista"/>
+        <input type="text" th:field="*{faixaEtaria}" placeholder="Faixa Etária"/>
+
+
+        <button type="submit">Salvar</button>
+    </form>
+
+</body>
+</html>

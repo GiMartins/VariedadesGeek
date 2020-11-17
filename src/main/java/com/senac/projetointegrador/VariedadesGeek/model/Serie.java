@@ -19,15 +19,16 @@ public class Serie {
     private Integer faixaEtaria;
 
     @Column
-    private String caracterisca;
+    private String caracteristica;
 
     @Column
     private String sinopse;
 
-    public Serie(String genero, Integer faixaEtaria, String caracterisca, String sinopse) {
+    public Serie(Integer id, String genero, Integer faixaEtaria, String caracteristica, String sinopse) {
+        this.id = id;
         this.genero = genero;
         this.faixaEtaria = faixaEtaria;
-        this.caracterisca = caracterisca;
+        this.caracteristica = caracteristica;
         this.sinopse = sinopse;
     }
 
@@ -55,12 +56,12 @@ public class Serie {
         this.faixaEtaria = faixaEtaria;
     }
 
-    public String getCaracterisca() {
-        return caracterisca;
+    public String getCaracteristica() {
+        return caracteristica;
     }
 
-    public void setCaracterisca(String caracterisca) {
-        this.caracterisca = caracterisca;
+    public void setCaracteristica(String caracteristica) {
+        this.caracteristica = caracteristica;
     }
 
     public String getSinopse() {

@@ -47,24 +47,48 @@ public class Jogo {
         this.id = id;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public Integer getFaixaEtaria() {
+        return faixaEtaria;
     }
 
     public void setFaixaEtaria(Integer faixaEtaria) {
         this.faixaEtaria = faixaEtaria;
     }
 
+    public String getSinopse() {
+        return sinopse;
+    }
+
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
+    }
+
+    public String getModos() {
+        return modos;
     }
 
     public void setModos(String modos) {
         this.modos = modos;
     }
 
+    public String getCaracteristicas() {
+        return caracteristicas;
+    }
+
     public void setCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
+    }
+
+    public String getPlataforma() {
+        return plataforma;
     }
 
     public void setPlataforma(String plataforma) {

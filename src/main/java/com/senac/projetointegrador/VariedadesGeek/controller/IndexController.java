@@ -14,11 +14,11 @@ public class IndexController {
 
     @GetMapping("/")
     public String paginaInicial(){
-
-        Usuario usuario = new Usuario("Giovana Martins", "giovana@gmail.com",
-                "123456", "Giovana", 23, "Feminino");
-
-        usuarioDAO.save(usuario);
+//
+//        Usuario usuario = new Usuario("Giovana Martins", "giovana@gmail.com",
+//                "123456", "Giovana", 23, "Feminino");
+//
+//        usuarioDAO.save(usuario);
 
         return "index";
 
