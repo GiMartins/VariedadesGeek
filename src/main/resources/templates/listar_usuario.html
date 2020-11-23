@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Usuário</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>Nome Completo</th>
+                <th>E-mail</th>
+                <th>Nome do Usuário</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr th:each="user : ${usuarios}">
+                <td th:text="${user.nomeCompleto}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.nomeUsuario}"></td>
+                <td th:text="${user.idade}"></td>
+                <td th:text="${user.sexo}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

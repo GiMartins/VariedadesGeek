@@ -30,6 +30,10 @@ public class Usuario {
     @Column
     private String sexo;
 
+
+    public Usuario() {
+    }
+
     public Usuario(String nomeCompleto, String email, String senha, String nomeUsuario, Integer idade, String sexo) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;

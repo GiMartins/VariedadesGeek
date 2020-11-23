@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class UsuarioController {
 
@@ -28,6 +30,17 @@ public class UsuarioController {
         usuarioDAO.save(usu);
 
         return "index";
+    }
+
+    @GetMapping("/listar_usuarios")
+    public ModelAndView listarUsuario(){
+        ModelAndView mv = new ModelAndView("listar_usuario");
+        List<Usuario> usuarios = usuarioDAO.findAll();
+
+        mv.addObject("usuarios",usuarios);
+
+        return mv;
+
     }
 
 
