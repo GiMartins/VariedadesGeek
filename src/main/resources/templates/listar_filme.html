@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Filmes</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Faixa Etária</th>
+                <th>Caracteristica</th>
+                <th>Sinopse</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr th:each="filme : ${filmes}">
+                <td th:text="${filme.nome}"></td>
+                <td th:text="${filme.genero}"></td>
+                <td th:text="${filme.faixaEtaria}"></td>
+                <td th:text="${filme.caracteristica}"></td>
+                <td th:text="${filme.sinopse}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

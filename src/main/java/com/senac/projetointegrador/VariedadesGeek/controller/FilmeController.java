@@ -2,12 +2,15 @@ package com.senac.projetointegrador.VariedadesGeek.controller;
 
 import com.senac.projetointegrador.VariedadesGeek.dao.FilmeDAO;
 import com.senac.projetointegrador.VariedadesGeek.model.Filme;
+import com.senac.projetointegrador.VariedadesGeek.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 public class FilmeController {
@@ -28,5 +31,15 @@ public class FilmeController {
         filmeDAO.save(filme);
 
         return "index";
+    }
+
+    @GetMapping("/listar_filme")
+    public ModelAndView listarfilme(){
+        ModelAndView mv = new ModelAndView("listar_filme");
+        List<Filme> Filmes = filmeDAO.findAll();
+
+        mv.addObject("filmes",Filmes);
+
+        return mv;
     }
 }

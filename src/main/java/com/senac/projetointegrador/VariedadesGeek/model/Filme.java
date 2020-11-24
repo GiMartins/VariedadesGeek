@@ -26,6 +26,9 @@ public class Filme {
     @Column
     private String sinopse;
 
+    public Filme() {
+    }
+
     public Filme(String nome, String genero, Integer faixaEtaria, String caracteristica, String sinopse) {
         this.nome = nome;
         this.genero = genero;
