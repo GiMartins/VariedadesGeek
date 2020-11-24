@@ -39,6 +39,9 @@ public class Jogo {
         this.plataforma = plataforma;
     }
 
+    public Jogo() {
+    }
+
     public Integer getId() {
         return id;
     }

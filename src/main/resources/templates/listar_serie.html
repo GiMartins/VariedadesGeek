@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Series</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+
+                <th>Gênero</th>
+                <th>Faixa Etária</th>
+                <th>Caracteristica</th>
+                <th>Sinopse</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr th:each="serie : ${series}">
+                <td th:text="${serie.genero}"></td>
+                <td th:text="${serie.faixaEtaria}"></td>
+                <td th:text="${serie.caracteristica}"></td>
+                <td th:text="${serie.sinopse}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

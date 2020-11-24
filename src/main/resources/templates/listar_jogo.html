@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Jogos</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>Gênero</th>
+                <th>Faixa Etária</th>
+                <th>Sinopse</th>
+                <th>Modos</th>
+                <th>Caracteristicas</th>
+                <th>Plataforma</th>
+            </tr>
+
+        </thead>
+        <tbody>
+                <tr th:each="jogo : ${jogos}">
+                <td th:text="${jogo.genero}"></td>
+                <td th:text="${jogo.faixaEtaria}"></td>
+                <td th:text="${jogo.sinopse}"></td>
+                <td th:text="${jogo.modos}"></td>
+                <td th:text="${jogo.caracteristicas}"></td>
+                <td th:text="${jogo.plataforma}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

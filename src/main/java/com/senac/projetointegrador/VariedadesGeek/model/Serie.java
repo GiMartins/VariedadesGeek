@@ -32,6 +32,9 @@ public class Serie {
         this.sinopse = sinopse;
     }
 
+    public Serie() {
+    }
+
     public Integer getId() {
         return id;
     }

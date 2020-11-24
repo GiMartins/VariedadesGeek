@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Música</title>
+    <div th:insert="fragments/cabecalho.html"></div>
+</head>
+<body>
+    <div th:insert="fragments/menu.html"></div>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>Nome da Música</th>
+                <th>Gênero</th>
+                <th>Artista</th>
+                <th>Faixa Etária</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr th:each="musica : ${musicas}">
+                <td th:text="${musica.nomeMusica}"></td>
+                <td th:text="${musica.genero}"></td>
+                <td th:text="${musica.artista}"></td>
+                <td th:text="${musica.faixaEtaria}"></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

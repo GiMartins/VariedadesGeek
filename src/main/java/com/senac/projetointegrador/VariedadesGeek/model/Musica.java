@@ -33,6 +33,9 @@ public class Musica {
         this.faixaEtaria = faixaEtaria;
     }
 
+    public Musica() {
+    }
+
     public Integer getId() {
         return id;
     }

@@ -1,6 +1,7 @@
 package com.senac.projetointegrador.VariedadesGeek.controller;
 
 import com.senac.projetointegrador.VariedadesGeek.dao.MusicaDAO;
+import com.senac.projetointegrador.VariedadesGeek.model.Filme;
 import com.senac.projetointegrador.VariedadesGeek.model.Musica;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 public class MusicaController {
@@ -28,5 +31,15 @@ public class MusicaController {
         musicaDAO.save(musica);
 
         return "index";
+    }
+
+    @GetMapping("/listar_musica")
+    public ModelAndView listarmusica(){
+        ModelAndView mv = new ModelAndView("listar_musica");
+        List<Musica> Musicas = musicaDAO.findAll();
+
+        mv.addObject("musica",Musicas);
+
+        return mv;
     }
 }
