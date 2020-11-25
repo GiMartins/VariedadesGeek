@@ -25,6 +25,9 @@ public class Musica {
     @Column
     private Integer faixaEtaria;
 
+    public Musica() {
+    }
+
     public Musica(Integer id, String nomeMusica, String genero, String artista, Integer faixaEtaria) {
         this.id = id;
         this.nomeMusica = nomeMusica;
@@ -33,8 +36,6 @@ public class Musica {
         this.faixaEtaria = faixaEtaria;
     }
 
-    public Musica() {
-    }
 
     public Integer getId() {
         return id;

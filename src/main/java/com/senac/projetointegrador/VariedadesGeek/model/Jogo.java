@@ -30,6 +30,9 @@ public class Jogo {
     @Column
     private String plataforma;
 
+    public Jogo() {
+    }
+
     public Jogo(String genero, Integer faixaEtaria, String sinopse, String modos, String caracteristicas, String plataforma) {
         this.genero = genero;
         this.faixaEtaria = faixaEtaria;
@@ -39,8 +42,6 @@ public class Jogo {
         this.plataforma = plataforma;
     }
 
-    public Jogo() {
-    }
 
     public Integer getId() {
         return id;

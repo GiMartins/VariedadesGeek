@@ -24,6 +24,9 @@ public class Serie {
     @Column
     private String sinopse;
 
+    public Serie() {
+    }
+
     public Serie(Integer id, String genero, Integer faixaEtaria, String caracteristica, String sinopse) {
         this.id = id;
         this.genero = genero;
@@ -32,8 +35,7 @@ public class Serie {
         this.sinopse = sinopse;
     }
 
-    public Serie() {
-    }
+
 
     public Integer getId() {
         return id;
