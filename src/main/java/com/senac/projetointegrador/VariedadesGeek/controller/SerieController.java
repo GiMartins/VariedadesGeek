@@ -29,7 +29,7 @@ public class SerieController {
     }
 
     @PostMapping("/salvarSerie")
-    public String salvarUsuario(@ModelAttribute Serie serie){
+    public String salvarSerie(@ModelAttribute Serie serie){
        serieDAO.save(serie);
 
         return "index";
