@@ -38,7 +38,7 @@ public class MusicaController {
         ModelAndView mv = new ModelAndView("listar_musica");
         List<Musica> Musicas = musicaDAO.findAll();
 
-        mv.addObject("musica",Musicas);
+        mv.addObject("musicas",Musicas);
 
         return mv;
     }

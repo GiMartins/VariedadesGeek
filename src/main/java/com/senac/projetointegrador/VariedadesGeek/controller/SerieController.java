@@ -40,7 +40,7 @@ public class SerieController {
         ModelAndView mv = new ModelAndView("listar_serie");
         List<Serie> Series = serieDAO.findAll();
 
-        mv.addObject("serie",Series);
+        mv.addObject("series",Series);
 
         return mv;
     }
