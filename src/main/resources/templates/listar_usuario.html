@@ -5,8 +5,13 @@
     <title>Listagem de Usuário</title>
     <div th:insert="fragments/cabecalho.html"></div>
 </head>
-<body>
+
     <div th:insert="fragments/menu.html"></div>
+
+    <form method="get" th:action="@{/buscarUsuario}">
+        <input type="text" placeholder="Digite o Nome" th:name="nome">
+        <input type="submit" text="Buscar">
+    </form>
 
     <table class="table">
 

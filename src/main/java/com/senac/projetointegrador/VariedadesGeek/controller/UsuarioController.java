@@ -4,9 +4,7 @@ import com.senac.projetointegrador.VariedadesGeek.dao.UsuarioDAO;
 import com.senac.projetointegrador.VariedadesGeek.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -41,6 +39,16 @@ public class UsuarioController {
 
         return mv;
 
+    }
+
+    @GetMapping("/buscarUsuario")
+    public ModelAndView buscarUsuario(@RequestParam(value = "nome") String nome){
+        ModelAndView mv = new ModelAndView("listar_usuario");
+        List<Usuario> usuarios = usuarioDAO.findByNome(nome);
+
+        mv.addObject("usuarios",usuarios);
+
+        return mv;
     }
 
 
