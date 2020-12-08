@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class SerieController {
     private SerieDAO serieDAO;
 
     @GetMapping("/cadastrar_serie")
-    public ModelAndView cadastrarSerie(Serie serie){
+    public ModelAndView cadastrarSerie(Serie serie) {
         ModelAndView mv = new ModelAndView("cadastro_serie");
 
         mv.addObject("serie", serie);
@@ -29,19 +30,31 @@ public class SerieController {
     }
 
     @PostMapping("/salvarSerie")
-    public String salvarSerie(@ModelAttribute Serie serie){
-       serieDAO.save(serie);
+    public String salvarSerie(@ModelAttribute Serie serie) {
+        serieDAO.save(serie);
 
         return "index";
     }
 
     @GetMapping("/listar_serie")
-    public ModelAndView listarserie(){
+    public ModelAndView listarserie() {
         ModelAndView mv = new ModelAndView("listar_serie");
         List<Serie> Series = serieDAO.findAll();
 
-        mv.addObject("series",Series);
+        mv.addObject("series", Series);
+
+        return mv;
+    }
+
+    @GetMapping("/buscarSerie")
+    public ModelAndView buscarSerie(@RequestParam(value = "genero") String genero) {
+        ModelAndView mv = new ModelAndView("listar_serie");
+        List<Serie> series = serieDAO.findByGenero(genero);
+
+        mv.addObject("series", series);
 
         return mv;
     }
 }
+
+
