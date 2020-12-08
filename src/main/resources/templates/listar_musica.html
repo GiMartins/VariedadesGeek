@@ -8,6 +8,11 @@
 <body>
     <div th:insert="fragments/menu.html"></div>
 
+    <form method="get" th:action="@{/buscarMusica}">
+        <input type="text" placeholder="Digite o Nome" th:name="nome">
+        <input type="submit" text="Buscar">
+    </form>
+
     <table class="table">
 
         <thead>

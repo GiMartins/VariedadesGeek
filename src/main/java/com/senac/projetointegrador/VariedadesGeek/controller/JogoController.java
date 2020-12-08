@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class JogoController {
     private JogoDAO jogoDAO;
 
     @GetMapping("/cadastrar_jogo")
-    public ModelAndView cadastrarJogo(Jogo jogo){
+    public ModelAndView cadastrarJogo(Jogo jogo) {
         ModelAndView mv = new ModelAndView("cadastro_jogo");
 
         mv.addObject("jogo", jogo);
@@ -27,21 +28,30 @@ public class JogoController {
     }
 
     @PostMapping("/salvarJogo")
-    public String salvarJogo(@ModelAttribute Jogo jogo){
+    public String salvarJogo(@ModelAttribute Jogo jogo) {
         jogoDAO.save(jogo);
 
         return "index";
     }
 
     @GetMapping("/listar_jogo")
-    public ModelAndView listarjogo(){
+    public ModelAndView listarjogo() {
         ModelAndView mv = new ModelAndView("listar_jogo");
         List<Jogo> Jogos = jogoDAO.findAll();
 
-        mv.addObject("jogos",Jogos);
+        mv.addObject("jogos", Jogos);
 
         return mv;
     }
 
+    @GetMapping("/buscarJogo")
+    public ModelAndView buscarJogo(@RequestParam(value = "genero") String genero) {
+        ModelAndView mv = new ModelAndView("listar_jogo");
+        List<Jogo> jogos = jogoDAO.findByGenero(genero);
 
+        mv.addObject("jogos", jogos);
+
+        return mv;
+
+    }
 }
