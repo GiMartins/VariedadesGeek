@@ -12,7 +12,7 @@ public class IndexController {
     @Autowired
     private UsuarioDAO usuarioDAO;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String paginaInicial(){
 //
 //        Usuario usuario = new Usuario("Giovana Martins", "giovana@gmail.com",
